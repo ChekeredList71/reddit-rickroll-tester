@@ -38,3 +38,4 @@ def is_text_ricked(text: str):
     for i in re.findall(r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)", str):
         if i in ricklinks:
             return True
+    return False
