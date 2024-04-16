@@ -35,8 +35,6 @@ def is_link_valid(url: str):
 
 
 def is_text_ricked(text: str):
-    # get link with regex
-    pass
-
-
-print(extract_comment("https://www.reddit.com/r/legaladvice/comments/1asv5yz/comment/kqt1dik/"))
+    for i in re.findall(r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)", str):
+        if i in ricklinks:
+            return True
