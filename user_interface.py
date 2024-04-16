@@ -1,4 +1,5 @@
 # Import Module
+import tkinter
 from tkinter import *
 
 # create root window
@@ -10,15 +11,41 @@ root.title("A Rickroll teszter")
 root.geometry('350x200')
 
 cim = Label(root, text="Kérlek add meg a linket!")
-cim.grid(column=3, row=1)
 
-link = Entry(root, width=10)
-link.grid(column=3, row=2)
+link = Entry(root, width=30)
+
+
+def benne_van():
+    top1 = Toplevel(root)
+    top1.title = "A Rickroll eredménye"
+    Label(text="A videó nem biztonságos!")
+
+    def close_eredmeny():
+        top1.destroy()
+        top1.update()
+
+    gomb1 = Button(text="vissza", command=close_eredmeny)
 
 # ide kell majd a link utáni válasz
 
-gomb = Button(root, text="Kész")
-gomb.grid(column=3, row=3)
+
+def nincs_benne():
+    top1 = Toplevel(root)
+    top1.title = "A Rickroll eredménye"
+    Label(text="A videó teljesen biztonságos!")
+
+    def close_eredmeny():
+        top1.destroy()
+        top1.update()
+
+    gomb1 = Button(text="vissza", command=close_eredmeny)
+
+
+gomb = Button(root, text="Kész", command=tkinter.Toplevel)
+
+cim.pack(fill=X, padx=20)
+link.pack(fill=X, padx=20)
+gomb.pack(fill=X, padx=20)
 
 # all widgets will be here
 # Execute Tkinter
